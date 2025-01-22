@@ -1,6 +1,6 @@
-
+import random
+import time
 # ------------- brute_force_solution -------------
-
 
 def brute_force_solution(arr,k):
     n = len(arr)
@@ -35,3 +35,18 @@ def sliding_window_solution(arr,k):
     return max_sum
 
 print(sliding_window_solution(arr,k))
+
+
+new_arr = [random.randint(1,1000) for _ in range(1000000)]
+k = 50
+
+start_time = time.time()
+sliding_window_solution(new_arr,k)
+sliding_window_duration = time.time() - start_time
+
+start_time = time.time()
+brute_force_solution(new_arr,k)
+brute_force_duration = time.time() - start_time
+
+print(f'Sliding window solution: {sliding_window_solution:.6f} sec')
+print(f'Brute force solution: {brute_force_solution:.6f} sec')
