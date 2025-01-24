@@ -55,3 +55,32 @@ print(f"Brute force time: {brute_force_duration:.6f} sec")
 
 print(f"Prefix sum memory usage: {prefix_sum_memory[1] / 1024:.2f} KB")
 print(f"Brute force memory usage: {brute_force_memory[1] / 1024:.2f} KB")
+
+
+
+class SalesData:
+    def __init__(self, sales):
+        self.sales = sales
+        self.prefix_sum = self.calculate_prefix_sum()
+    
+    def calculate_prefix_sum(self):
+        """
+        Prefix sum dizisini hesaplar.
+        """
+        prefix_sum = [0] * (len(self.sales) + 1)
+        for i in range(len(self.sales)):
+            prefix_sum[i + 1] = prefix_sum[i] + self.sales[i]
+        return prefix_sum
+
+    def get_sales_in_range(self, start, end):
+        return self.prefix_sum[end + 1] - self.prefix_sum[start]
+
+sales = [200, 450, 300, 400, 500, 700, 100]
+
+sales_data = SalesData(sales)
+
+start_day = 1  
+end_day = 4    
+
+total_sales = sales_data.get_sales_in_range(start_day, end_day)
+print(f"Day {start_day + 1} with day {end_day + 1} without result sales: {total_sales}")
