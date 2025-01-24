@@ -25,12 +25,6 @@ The following performance comparison highlights the time differences between the
 
 As demonstrated above, the **Two Pointer** approach significantly outperforms the **Brute Force** solution in terms of execution time. The **Two Pointer** method leverages optimized techniques for faster computation, whereas the brute force method involves exhaustive searching, which is much slower for large inputs.
 
-## Features
-
-- **Python implementations** for algorithmic problems.
-- **Well-commented** code for better understanding.
-- **Detailed explanations** and references for each technique.
-- **Optimized solutions** with time and space complexity analysis.
 
 ## Installation
 
